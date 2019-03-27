@@ -13,7 +13,9 @@
                     <tbody>
                         @foreach ($Posts as $post)
                             <tr>
-                                <td>{{ $post->post_title }}</td>
+                              <?php echo '<td><a href="/articles/'.$post->post_title.'"> ' . $post->post_title . 
+                              '</a></td> '; ?>
+                                
                                
                                 <td >{{ $post->created_at}}</td> 
                             </tr>

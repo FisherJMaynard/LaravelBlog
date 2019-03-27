@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/', 'HomeController@index'); //utilise la fonction index dans le controller HomeController
 Route::get('/contact', 'ContactController@index'); 
 Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles/{post_title}', 'ArticlesController@show');
 
 /*
 Route::get('/contact', 'HomeController@contact'); 
