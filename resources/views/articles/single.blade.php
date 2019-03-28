@@ -1,17 +1,16 @@
 @extends('layouts/main')
 
 @section('content')
-<h1>Home</h1>
 
-<div>
-            
-      <?php var_dump($PostArticle) ?>
+<div>     
+      <ul>
  @foreach ($PostArticle as $Post)
-                       <li> {{ $Post->post_author}}</li>
+ <?php $author = \App\Post::find($Post->post_author)->author ?>
+                       <li> {{ $author->name}}</li>
                        <li> {{ $Post->created_at}}</li>
                        <li> {{ $Post->post_content}}</li>
                        @endforeach 
-                      
+               </ul>       
 </div>                   
 @endsection
 

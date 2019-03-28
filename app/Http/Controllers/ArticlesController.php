@@ -11,16 +11,15 @@ class ArticlesController extends Controller
     // 	return view('articles');
     // }
 
-    public function index()
-    {
-        
-        return view('articles');
-        
+    public function index(){
+        $posts = \App\Post::orderBy('post_date','desc')->get();
+        return view('articles', ['Posts' => $posts]);
+    	
     }
 
     public function show( $post_title ) {
-        $Post = \App\Post:: where ( 'post_title' , $post_title )->first(); //get  first post with post_nam == $post_name
-        return view ( 'articles/single' , ['PostArticle' => $Post]);
+        $OnePost = \App\Post:: where ( 'post_title' , $post_title )->get() ; 
+        return view ( 'articles/single' , ['PostArticle' => $OnePost]);
 
         }
 
