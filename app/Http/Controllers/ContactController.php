@@ -1,21 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Contact;
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;;
+use Carbon\Carbon;
+
 
 class ContactController extends Controller
 {
-    function index(){
-    	return view('contact');
+    function request(){
+    	return view('contactRequest');
     }
 
- /*   function articles(){
-    	return view('articles');
-    }
+function store(ContactRequest $request){
+   $contact = new Contact;
+   $contact->contact_name= $request['contact_name'];
+   $contact->contact_email= $request['contact_email'];
+   $contact->contact_message= $request['contact_message'];
+   $contact->contact_date= Carbon::now();
 
-    function home(){
-    	return view('welcome');
-    }
- */
+   $contact->save();
+
+   return view('contactResponse');
+}
+
 }

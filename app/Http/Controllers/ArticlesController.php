@@ -19,7 +19,7 @@ class ArticlesController extends Controller
 
     public function show( $post_title ) {
         $OnePost = \App\Post:: where ( 'post_title' , $post_title )->get() ; 
-        return view ( 'articles/single' , ['PostArticle' => $OnePost]);
+        return view ( 'articles.single' , ['PostArticle' => $OnePost]);
 
         }
 

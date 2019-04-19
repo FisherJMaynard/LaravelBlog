@@ -19,7 +19,7 @@ class CreateContactTable extends Migration
             $table->string('contact_email');
             $table->string('contact_message');
             $table->date('contact_date');
-            $table->timestamps();
+            // $table->timestamps(); erase from the table as mentionned in the TP2
         });
     }
 
