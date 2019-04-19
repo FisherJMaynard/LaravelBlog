@@ -1,5 +1,10 @@
 @extends('layouts/main')
 
 @section('content')
-<h1>Contact à venir</h1>
+
+
+<h3>Message Recu</h3>
+
+
+
 @endsection

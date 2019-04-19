@@ -11,18 +11,12 @@
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
+
 
 Route::get('/', 'HomeController@index'); //utilise la fonction index dans le controller HomeController
-Route::get('/contact', 'ContactController@index'); 
+Route::get('/contact/new', 'ContactController@request'); 
+Route::post('/contact', 'ContactController@store'); 
 Route::get('/articles', 'ArticlesController@index');
 Route::get('/articles/{post_title}', 'ArticlesController@show');
 
-/*
-Route::get('/contact', 'HomeController@contact'); 
-Route::get('/articles', 'HomeController@articles');
-*/
+
