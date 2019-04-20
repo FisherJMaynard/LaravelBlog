@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Traits\ShowComments;
 
 class ArticlesController extends Controller
 {
+    use ShowComments;
 // get all posts in DB ordered by desc
     public function index(){
         $posts = \App\Post::orderBy('post_date','desc')->get();
@@ -15,8 +17,10 @@ class ArticlesController extends Controller
 
     // get the specified post with $post_title
     public function show( $post_title ) {
-        $OnePost = \App\Post:: where ( 'post_title' , $post_title )->get() ; 
-        return view ( 'articles.single' , ['PostArticle' => $OnePost]);
+        $onePost = \App\Post:: where ( 'post_title' , $post_title )->get() ; 
+        $comments = $this->process($post_title);
+
+        return view ('articles.comments' , ['comments' => $comments, 'postArticle' => $onePost]);
 
         }
 

@@ -1,9 +1,14 @@
-@extends('layouts/main')
+@extends('articles.single')
 
-@section('content')
-<h2>Saisissz votre message</h2>
+@section('articleForm')
 
-<form action="{{ url('/contact') }}" method="POST">
+@foreach ($postArticle as $post)
+<!-- Access the actuel post (id)  -->
+@endforeach 
+
+<h3>Laisser un commentaire</h3>
+<!-- create new route for each article with article's id -->
+<form action= <?php echo'/articles/newComment/'.$post->id ;?> method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <input type="text" class="form-control {{ $errors->has('contact_name') ? 'is-invalid' : '' }}" name="contact_name" id="contact_name" placeholder="Votre nom"
@@ -16,15 +21,15 @@
                             <div class="invalid-feedback">:message</div>') !!}
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control {{ $errors->has('contact_message') ? 'is-invalid' : '' }}" name="contact_message" id="contact_message" placeholder="Votre message">{{ old('contact_message') }}</textarea>                            {!! $errors->first('contact_message', '
+                            <textarea class="form-control {{ $errors->has('contact_message') ? 'is-invalid' : '' }}" name="contact_message" id="contact_message" placeholder="Votre commentaire">{{ old('contact_message') }}</textarea>                            {!! $errors->first('contact_message', '
                             <div class="invalid-feedback">:message</div>') !!}
                         </div>
                         <button type="submit" class="btn btn-secondary">Envoyer !</button>
                     </form>
 
-<div>
-<!-- Confirmation message injected here -->
-@yield('confirmationMessage')
-</div>
+<div>     
+@yield('articleComments')  
+</div>  
+
 
 @endsection

@@ -18,5 +18,6 @@ Route::get('/contact/new', 'ContactController@request');
 Route::post('/contact', 'ContactController@store'); 
 Route::get('/articles', 'ArticlesController@index');
 Route::get('/articles/{post_title}', 'ArticlesController@show');
+Route::post('/articles/newComment/{post_id}', 'CommentController@store');
 
 

@@ -1,10 +1,7 @@
-@extends('layouts/main')
+@extends('contactRequest')
 
-@section('content')
+@section('confirmationMessage')
 
-
-<h3>Message Recu</h3>
-
-
+<p>Message bien Reçu.</p>
 
 @endsection
