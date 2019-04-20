@@ -9,10 +9,13 @@ use Carbon\Carbon;
 
 class ContactController extends Controller
 {
+    // return the view with the form
     function request(){
     	return view('contactRequest');
     }
 
+    // after verifications(with ContactRequest), store the data in the DB
+    // and redirect to contactResponse view
 function store(ContactRequest $request){
    $contact = new Contact;
    $contact->contact_name= $request['contact_name'];
