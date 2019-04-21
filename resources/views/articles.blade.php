@@ -12,7 +12,7 @@
                     </thead>
                     <tbody>
                         @foreach ($Posts as $post)
-                        <?php $author = \App\Post::find($post->post_author)->author ?>
+                        <?php $author = \App\Post::find($post->id)->author ?>
                             <tr>
                              <td><a href="/articles/{{$post->post_title}}">  {{$post->post_title }}</a></td> 
                              <td >{{ $post->created_at}}</td> 
