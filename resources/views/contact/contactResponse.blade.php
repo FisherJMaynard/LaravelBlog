@@ -1,4 +1,4 @@
-@extends('contactRequest')
+@extends('contact.contactRequest')
 
 @section('confirmationMessage')
 

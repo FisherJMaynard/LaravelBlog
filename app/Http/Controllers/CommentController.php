@@ -21,8 +21,13 @@ class CommentController extends Controller
         $comment->comment_date= Carbon::now();
      
         $comment->save();
-     
-        return view('articles.commentResponse');
+
+        // regenerate the post_title for the redirection
+        $posts = \App\Post::where('id', $post_id)->get();
+        foreach ($posts as $post) {
+            $post_title= $post->post_title;
+        }
+        return redirect("/articles/{$post_title}");
      }
 
 }
