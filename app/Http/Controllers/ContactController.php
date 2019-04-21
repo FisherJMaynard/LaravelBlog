@@ -11,7 +11,7 @@ class ContactController extends Controller
 {
     // return the view with the form
     function request(){
-    	return view('contactRequest');
+    	return view('contact.contactRequest');
     }
 
     // after verifications(with ContactRequest), store the data in the DB
@@ -25,7 +25,7 @@ function store(ContactRequest $request){
 
    $contact->save();
 
-   return view('contactResponse');
+   return view('contact.contactResponse');
 }
 
 }

@@ -21,6 +21,15 @@ class UsersTableSeeder extends Seeder
         ]); 
         */
 
+        // DB::table('users')->insert([
+        //     'name' => 'user',
+        //     'email' => 'user@gmail.com',
+        //     'password' => bcrypt('123456'),
+        //     'created_at' => DB::raw('CURRENT_TIMESTAMP'),
+        //     'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
+            
+        // ]); 
+
         factory(App\User::class,10)->create()->each(function($user){
             $user->posts()->save(factory(App\Post::class)->create());
             });

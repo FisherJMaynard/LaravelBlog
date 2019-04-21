@@ -22,7 +22,7 @@ class CommentController extends Controller
      
         $comment->save();
      
-        return view('contactResponse');
+        return view('articles.commentResponse');
      }
 
 }

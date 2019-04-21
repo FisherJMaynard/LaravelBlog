@@ -1,7 +1,7 @@
 @extends('layouts/main')
 
-@section('content')
-<h2>Saisissz votre message</h2>
+@section('MainContent')
+<h3>Saisissz votre message</h3>
 
 <form action="{{ url('/contact') }}" method="POST">
                         {{ csrf_field() }}

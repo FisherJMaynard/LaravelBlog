@@ -1,6 +1,6 @@
 @extends('layouts/main')
 
-@section('content')
+@section('MainContent')
 
 <h1>Here's a list of available articles</h1>
 <table>
