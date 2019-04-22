@@ -21,7 +21,7 @@
 <li><a href="/articles/vip">Articles VIP</a></li>
 <li><a href="/contact/new">Contact</a></li>
 @if (Auth::user())
-<li><a href="/profil">Mon Profil</a></li>
+<li><a href="/profile">Mon Profil</a></li>
 @endif
 
 
@@ -70,6 +70,8 @@
 @yield('AuthApp')
 
 @yield('MainContent')
+
+@yield('articleModification')
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>

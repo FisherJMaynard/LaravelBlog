@@ -36,9 +36,6 @@ class HomeController extends Controller
         return view ('articles VIP');
     }
 
-    function showAccount(){
-    	return view('userAccount');
-    }
 
     
 

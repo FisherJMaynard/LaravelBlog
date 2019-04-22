@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Contact;
 use Illuminate\Http\Request;
-use App\Http\Requests\ContactRequest;;
+use App\Http\Requests\ContactRequest;
 use Carbon\Carbon;
 
 
