@@ -12,9 +12,7 @@ README Projet Blog php Laravel M2DCISS RS
 2. Pour qu'une base de donnée soit utilisable:
 - Créer la base de données sqlite dans le répertoire database du projet
 - Aller modifier le fichier .env du projet en indiquant le chemin vers la bd à la ligne DB_BATABASE= ainsi que sqlite à DB_CONNEXION=
-- Puis lancer la commande pour remplir la bd: php artisan migrate:refresh --seed
-	La base de donnée contient 10 users avec 1 article chacun. 
-	(Un user avec id et mot de passe créé pour la fonction d'authentification, voir Fonctionnalités ci-après). 
+- Puis lancer la commande pour remplir la bd: php artisan migrate:refresh --seed . La base de donnée contient 10 users avec 1 article chacun. (Un user avec id et mot de passe est créé pour la fonction d'authentification, voir Fonctionnalités ci-après). 
 
 3. Rendre le projet fonctionnel:
 - Ouvrir l'invité de commande
@@ -25,15 +23,14 @@ README Projet Blog php Laravel M2DCISS RS
 
 # Fonctionnalités
 Nous avons implémenté les fonctionnalités suivantes:
-1. 1-Gestion des commentaires
+1. Gestion des commentaires
 	Il est possible d'ajouter un commentaire en dessous des articles.
-2. 2-CRUD des articles
+2. CRUD des articles
 	La partie "pour aller plus loin" a aussi été effectuée (protection par l'authentification, voir fonctionnalité suivante).
-3. 3-Identification / Authentification qui protège l'accès à l’administration
-Pour la fonctionnalité ajoutant l’authentification, il y a besoin de fournir les identifiants d’utilisateurs générés. Il faut procéder comme suit:
+3. Identification / Authentification qui protège l'accès à l’administration. Pour la fonctionnalité ajoutant l’authentification, il y a besoin de fournir les identifiants d’utilisateurs générés. Il faut procéder comme suit:
 * Se placer sur le répertoire contenant le projet laravel
 * Dans un terminal, taper la commande suivante: php artisan db:seed
-* Ce sera fait les fonctionnalités à regarder (étape ci-après): il faudra se connecter au site internet avec les identifiants suivants: 'email' => 'user@gmail.com','password' => '123456'.
+* (Ce sera fait dans les fonctionnalités à regarder (étape ci-après): il faudra se connecter au site internet avec les identifiants suivants: 'email' => 'user@gmail.com','password' => '123456').
 
 ## Fonctionnalités à regarder:
 De préférence, suivez l'ordre des fonctionnalités présentées sinon vous ne serez pas connecté aux bons moments etc.
@@ -61,7 +58,7 @@ Les fonctionnalités du TP2 et les fonctionnalités optionnelles ajoutées étan
 - Si vous ne remplissez pas les champs, vous aurez des messages vous indiquant de remplir votre nom/prénom par exemple. De même si vous donnez une adresse mail ne contenant pas de @ par exemple.
 
 4. Identification / Authentification qui protège l'accès à l’administration et protection par middlewares
-- Connectez-vous avec: admin@gmail.com et 123456789 comme mot de passe. Vous avez les mêmes droits que l'utilisateur lambda mais vous avez un espace d'administration supplémentaire (onglet Administration). Pour cela, nous avons utilisé des middleware (voir dans les routes du projet) pour permettre à certains utilisateurs d'accéder à certaines fonctionnalités/parties du site et pour les protéger:
+- Connectez-vous avec comme identifiant 'admin@gmail.com' et '123456789' comme mot de passe. Vous avez les mêmes droits que l'utilisateur lambda mais vous avez un espace d'administration supplémentaire (onglet Administration). Pour cela, nous avons utilisé des middleware (voir dans les routes du projet) pour permettre à certains utilisateurs d'accéder à certaines fonctionnalités/parties du site et pour les protéger:
 - Si vous tapez l'URL http://localhost:8000/admin cela va fonctionner car vous êtes connecté en tant qu'administrateur.
 - En revanche, déconnectez vous (admin -> logout). Maintenant, si vous tapez cette même URL (http://localhost:8000/admin) vous accédez à la page d'accueil du site et non aux fonctionnalités d'administrateur.
 
