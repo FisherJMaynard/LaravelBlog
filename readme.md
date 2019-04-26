@@ -1,3 +1,60 @@
+README Projet Blog php Laravel M2DCISS RS
+HAMMAR Nabil
+BELLANGER Cindy
+
+## Guide d'installation
+1. Cloner le projet:
+- Ouvrir l'invité de commande
+- Vous placer dans le dossier où vous voulez cloner le projet
+- Utiliser la commande suivante:
+		$ git clone https://github.com/FisherJMaynard/LaravelBlog.git
+
+2. Pour qu'une base de donnée soit utilisable:
+- Créer la base de données sqlite dans le répertoire database du projet
+- Aller modifier le fichier .env du projet en indiquant le chemin vers la bd à la ligne DB_BATABASE= ainsi que sqlite à DB_CONNEXION=
+- Puis lancer la commande pour remplir la bd: php artisan migrate:refresh --seed
+	La base de donnée contient 10 users avec 1 article chacun. 
+	(Un user avec id et mot de passe créé pour la fonction d'authentification, voir Fonctionnalités ci-après). 
+
+3. Rendre le projet fonctionnel:
+- Ouvrir l'invité de commande
+- Vous placer dans le répertoire du projet
+- Utiliser la commande suivante:
+		php artisan serve
+- Vous pouvez maintenant visiter la page (avec comme adresse celle du locahost)
+
+
+## Fonctionnalités
+Nous avons effectué le TP2:
+- L'ensemble des pages suit un même layout,
+- La base de donnée est remplie grâce à la factory,
+- Les 3 derniers artiles sont affichés en page d'accueil,
+- Il est possible de cliquer sur un article pour l'afficher.
+
+Nous avons implémenté les fonctionnalités suivantes:
+1. 1-Gestion des commentaires
+	Il est possible d'ajouter un commentaire en dessous de l'article.
+
+2. 2-CRUD des articles
+	La partie "pour aller plus loin" a aussi été effectuée (protection par l'authentification, voir fonctionnalité suivante).
+
+3. 3-Authentification:
+Pour la fonctionnalité ajoutant l’authentification, il y a besoin de fournir les identifiants d’utilisateurs générés. Il faut procéder comme suit:
+* Se placer sur le répertoire contenant le projet laravel
+* Dans un terminal, taper la commande suivante: php artisan db:seed
+* Se connecter au site internet avec les identifiants suivants:
+	    'email' => 'user@gmail.com',
+            'password' => '123456'),
+
+
+## Difficultés Rencontrées
+Toute la progression du projet n'est pas visible sur github (nous avons commencé à l'utiliser assez tard).
+La structure du blog (exercice 1 à 5) a été effectuée par Cindy, la suite du projet ainsi que les options par Nabil. 
+
+
+
+## 
+##
 Test git
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
