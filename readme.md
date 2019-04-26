@@ -1,6 +1,6 @@
 README Projet Blog php Laravel M2DCISS RS
-HAMMAR Nabil
-BELLANGER Cindy
+- HAMMAR Nabil
+- BELLANGER Cindy
 
 ## Guide d'installation
 1. Cloner le projet:
