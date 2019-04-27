@@ -64,11 +64,11 @@ Les fonctionnalités du TP2 et les fonctionnalités optionnelles ajoutées étan
 
 
 
-
 ## Remarques
-- Toute la progression du projet n'est pas visible sur github (nous avons commencé à l'utiliser assez tard).
-La structure du blog (exercice 1 à 5) a été effectuée par Cindy, la suite du projet ainsi que les options par Nabil. 
-- Nous n'avons pas touché au CSS.
+- Toute la progression du projet n'est pas visible sur github car nous avons commencé à l'utiliser assez tard:  La structure du blog a été effectuée par Cindy et envoyée d'un coup dans le tout premier commit ("first commit" envoyé depuis l'ordinateur de nabil), le formulaire de contact ainsi que les options ont été faits par Nabil (tous les commits suivants). C'est pourquoi la répartition des commit n'est pas égale.
+- Nous ne comprenons pas d'où vient le 3ème contributeur: tous les commit (sauf ceux de cindy) ont été faits par Nabil depuis son mac (qui voyant ce contributeur apparaitre sur son propre commit a rentré ses identifiants pour voir si ça arrêtait de commiter avec le mauvais nom et effectivement cela a bien permis de remettre son nom sur les commit suivants qu'il a effectués). Vous pourrez constater cela sur l'image jointe à notre e-mail.
+- Nous n'avons pas touché au CSS dans notre projet.
+
 
 
 ## 
