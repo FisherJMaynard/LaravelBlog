@@ -11,8 +11,9 @@ README Projet Blog php Laravel M2DCISS RS
 
 2. Pour qu'une base de donnée soit utilisable:
 - Créer la base de données sqlite dans le répertoire database du projet
-- Aller modifier le fichier .env du projet en indiquant le chemin vers la bd à la ligne DB_BATABASE= ainsi que sqlite à DB_CONNEXION=
-- Puis lancer la commande pour remplir la bd: php artisan migrate:refresh --seed . La base de donnée contient 10 users avec 1 article chacun. (Un user avec id et mot de passe est créé pour la fonction d'authentification, voir Fonctionnalités ci-après). 
+- Aller modifier le fichier .env du projet en indiquant le chemin vers la bd à la ligne DB_BATABASE= 
+ainsi que sqlite à DB_CONNEXION=
+- Lancer la commande pour remplir la bd: php artisan migrate:refresh --seed . La base de donnée contient 10 users avec 1 article chacun. (Un user et un admin avec id et mot de passe sont créés pour la fonction d'authentification, voir Fonctionnalités ci-après). 
 
 3. Rendre le projet fonctionnel:
 - Ouvrir l'invité de commande
@@ -26,11 +27,13 @@ Nous avons implémenté les fonctionnalités suivantes:
 1. Gestion des commentaires
 	Il est possible d'ajouter un commentaire en dessous des articles.
 2. CRUD des articles
-	La partie "pour aller plus loin" a aussi été effectuée (protection par l'authentification, voir fonctionnalité suivante).
-3. Identification / Authentification qui protège l'accès à l’administration. Pour la fonctionnalité ajoutant l’authentification, il y a besoin de fournir les identifiants d’utilisateurs générés. Il faut procéder comme suit:
-* Se placer sur le répertoire contenant le projet laravel
-* Dans un terminal, taper la commande suivante: php artisan db:seed
-* (Ce sera fait dans les fonctionnalités à regarder (étape ci-après): il faudra se connecter au site internet avec les identifiants suivants: 'email' => 'user@gmail.com','password' => '123456').
+	La partie "pour aller plus loin" a aussi été effectuée (protection par l'authentification, voir fonctionnalité suivante).Chaque utilisateur dispose d'un espace personnel d'où il peut gérer (CRUD) ses articles.
+3. Identification / Authentification qui protège l'accès à l’administration. Pour la fonctionnalité ajoutant l’authentification, vous pouvez utiliser les comptes suivants:
+* login: user@gmail.com     password: '123456' pour un utilisateur lambda
+* login: admin@gmail.com    password:'123456789' pour un administrateur
+4 - Ajout de rôles utilisateurs
+	Il est possible de gérer(CRUD) les utilisateurs de l'application. Il est donc possible pour l'administrateur d'élever un utilisateur au role d'administrateure et vice versa.
+
 
 ## Fonctionnalités à regarder:
 De préférence, suivez l'ordre des fonctionnalités présentées sinon vous ne serez pas connecté aux bons moments etc.
@@ -43,7 +46,7 @@ Les fonctionnalités du TP2 et les fonctionnalités optionnelles ajoutées étan
 - Cliquer sur l'onglet Contact: on peut envoyer un message à l'administrateur du site en donnant son nom/prénom, e-mail, le message, et en cliquant sur "envoyer!"
 
 2. Login/authentification et CRUD des articles:
-- Cliquer sur l'onglet Login: se logger avec les identifiants suivants: 'email' => 'user@gmail.com', 'password' => '123456'. Une fois loggé, dans contact il n'y a plus besoin de donner son nom/prénom et email (qui sont complétés automatiquement), il suffit de taper son message et de l'envoyer. En se loggant, une page supplémentaire est accessible: Mon profil.
+- Cliquer sur l'onglet Login: se logger avec les identifiants fournis plus haut. Une fois loggé, dans contact il n'y a plus besoin de donner son nom/prénom et email (qui sont complétés automatiquement), il suffit de taper son message et de l'envoyer. En se loggant, une page supplémentaire est accessible: Mon profil.
 - Cliquer sur la page Mon Profil: Elle contient la liste des articles de l'utilisateur connecté.
 - On peut y créer un article (titre, catégorie, contenu) et cliquer sur envoyer. L'article apparait alors dans la liste d'articles de l'utilisateur et est ajouté à la BD (il est visible en première place dans l'onglet "Articles").
 - Accédez directement à la page de l'article par le lien hypertexte sur le titre de l'article (dans la liste d'articles de l'utilisateur).
@@ -58,9 +61,10 @@ Les fonctionnalités du TP2 et les fonctionnalités optionnelles ajoutées étan
 - Si vous ne remplissez pas les champs, vous aurez des messages vous indiquant de remplir votre nom/prénom par exemple. De même si vous donnez une adresse mail ne contenant pas de @ par exemple.
 
 4. Identification / Authentification qui protège l'accès à l’administration et protection par middlewares
-- Connectez-vous avec comme identifiant 'admin@gmail.com' et '123456789' comme mot de passe. Vous avez les mêmes droits que l'utilisateur lambda mais vous avez un espace d'administration supplémentaire (onglet Administration). Pour cela, nous avons utilisé des middleware (voir dans les routes du projet) pour permettre à certains utilisateurs d'accéder à certaines fonctionnalités/parties du site et pour les protéger:
+- Connectez-vous avec comme identifiant 'admin@gmail.com' et '123456789' comme mot de passe. Vous avez les mêmes droits que l'utilisateur lambda mais en plus vous avez un espace d'administration (onglet Administration). Pour cela, nous avons utilisé des middleware (voir dans les routes du projet) pour permettre à certains utilisateurs d'accéder à certaines fonctionnalités/parties du site et pour les protéger:
 - Si vous tapez l'URL http://localhost:8000/admin cela va fonctionner car vous êtes connecté en tant qu'administrateur.
 - En revanche, déconnectez vous (admin -> logout). Maintenant, si vous tapez cette même URL (http://localhost:8000/admin) vous accédez à la page d'accueil du site et non aux fonctionnalités d'administrateur.
+- Dans l'espace d'administration, vous pouvez gérer(CRUD) les utilisateurs. Si vous supprimez un utilisateur, tous les articles de ce dernier seront egalement supprimés. Tous les commentaires des articles supprimés le seront aussi automatiquement.
 
 
 
