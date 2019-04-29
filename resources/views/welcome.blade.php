@@ -1,6 +1,7 @@
 @extends('layouts/main')
 
 @section('MainContent')
+
 <table>
                     <thead>
                         <td>Title</td>

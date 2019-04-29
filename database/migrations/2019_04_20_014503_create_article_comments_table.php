@@ -20,6 +20,8 @@ class CreateArticleCommentsTable extends Migration
             $table->string('comment_email');
             $table->string('comment_message');
             $table->date('comment_date');
+            
+            
 
             $table->foreign('post_id')->references('id')->on('posts');
         });

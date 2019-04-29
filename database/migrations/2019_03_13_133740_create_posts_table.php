@@ -24,7 +24,6 @@ class CreatePostsTable extends Migration
             $table->string('post_type');
             $table->string('post_category');
             $table->timestamps();
-
             $table->foreign('post_author')->references('id')->on('users');
         });
     }

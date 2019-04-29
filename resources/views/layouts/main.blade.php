@@ -20,9 +20,16 @@
 <li><a href="/articles">Articles</a></li>
 <li><a href="/articles/vip">Articles VIP</a></li>
 <li><a href="/contact/new">Contact</a></li>
+<!-- only athenticated users can see the user account -->
 @if (Auth::user())
 <li><a href="/profile">Mon Profil</a></li>
+<!-- only athenticated users who are admins can see the administration page -->
+@if (Auth::user()->role ==='admin' )
+<li><a href="/admin">Administration</a></li>
 @endif
+@endif
+
+
 
 
 <!-- Auth menu  -->

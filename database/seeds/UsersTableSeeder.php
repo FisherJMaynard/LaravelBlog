@@ -23,8 +23,19 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'user',
+            'role' => 'user',
             'email' => 'user@gmail.com',
             'password' => bcrypt('123456'),
+            'created_at' => DB::raw('CURRENT_TIMESTAMP'),
+            'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
+            
+        ]); 
+
+        DB::table('users')->insert([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('123456789'),
+            'role' => 'admin',
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
             
