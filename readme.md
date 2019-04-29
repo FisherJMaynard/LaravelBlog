@@ -24,15 +24,15 @@ ainsi que sqlite à DB_CONNEXION=
 
 # Fonctionnalités
 Nous avons implémenté les fonctionnalités suivantes:
-1. Gestion des commentaires
+1. Gestion des commentaires:
 	Il est possible d'ajouter un commentaire en dessous des articles.
-2. CRUD des articles
-	La partie "pour aller plus loin" a aussi été effectuée (protection par l'authentification, voir fonctionnalité suivante).Chaque utilisateur dispose d'un espace personnel d'où il peut gérer (CRUD) ses articles.
+2. CRUD des articles:
+	La partie "pour aller plus loin" a aussi été effectuée (protection par l'authentification, voir fonctionnalité suivante). Chaque utilisateur dispose d'un espace personnel d'où il peut gérer (CRUD) ses articles.
 3. Identification / Authentification qui protège l'accès à l’administration. Pour la fonctionnalité ajoutant l’authentification, vous pouvez utiliser les comptes suivants:
 * login: user@gmail.com     password: '123456' pour un utilisateur lambda
 * login: admin@gmail.com    password:'123456789' pour un administrateur
-4 - Ajout de rôles utilisateurs
-	Il est possible de gérer(CRUD) les utilisateurs de l'application. Il est donc possible pour l'administrateur d'élever un utilisateur au role d'administrateure et vice versa.
+4. Ajout de rôles utilisateurs: 
+	Il est possible de gérer(CRUD) les utilisateurs de l'application. Il est donc possible pour l'administrateur d'élever un utilisateur au role d'administrateur et vice versa.
 
 
 ## Fonctionnalités à regarder:
